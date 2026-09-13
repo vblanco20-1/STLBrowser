@@ -49,6 +49,15 @@ python tools/build.py ctest --preset debug
 
 The core uses portable filesystem/STL interfaces. Linux does not yet have a tested build/picker/package; the Windows folder picker and cancellable I/O implementation are isolated in `src/platform.cpp`.
 
+Project C++ follows the Vulkan Guide layout: four-space indentation, function braces on their own line, braced control flow, and blank lines between logical steps. The root `.clang-format` captures the style (validated with clang-format 21). Preserve those logical blank lines when editing. Format application code and tests in PowerShell:
+
+```powershell
+$formatFiles = Get-ChildItem src/*.cpp, src/*.hpp, tests/*.cpp
+clang-format -i $formatFiles.FullName
+```
+
+Bundled code under `third_party/` keeps its upstream formatting. Shaders follow the same layout and are formatted separately because clang-format does not parse GLSL interface blocks correctly.
+
 **Validation and diagnostics**
 
 Debug builds enable Vulkan core and synchronization validation. Release builds opt in with `--validation`. `--single-queue` exercises fallback scheduling. Console output includes errors and final frame/memory statistics; the application itself never writes a thumbnail cache to disk.
