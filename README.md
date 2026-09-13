@@ -2,6 +2,8 @@
 
 A Windows-first C++20 / Dear ImGui / Vulkan browser for large collections of STL printing files.
 
+This project is entirely vivecoded as its a simple thing for my personal use. Use at your own risk, i havent tested it much.
+
 **Run**
 
 Launch `dist/STLInspector.exe`, choose **Open folder**, or enter a local/UNC path. You can also pass a directory on the command line:
