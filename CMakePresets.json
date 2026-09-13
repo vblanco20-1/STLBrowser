@@ -1,0 +1,11 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {"name":"windows","generator":"Visual Studio 18 2026","architecture":"x64","binaryDir":"${sourceDir}/build","cacheVariables":{"BUILD_TESTING":"ON"}}
+  ],
+  "buildPresets": [
+    {"name":"debug","configurePreset":"windows","configuration":"Debug"},
+    {"name":"release","configurePreset":"windows","configuration":"Release"}
+  ],
+  "testPresets": [{"name":"debug","configurePreset":"windows","configuration":"Debug","output":{"outputOnFailure":true}}]
+}

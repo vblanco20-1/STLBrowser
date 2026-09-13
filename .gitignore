@@ -1,0 +1,5 @@
+/build/
+/dist/
+/test-output/
+imgui.ini
+*.log
